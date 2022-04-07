@@ -4,7 +4,7 @@
       <b-input-group>
         <b-form-input type="text" v-model="value" />
         <b-input-group-append>
-          <b-button variant="info">送信</b-button>
+          <b-button variant="success">送信</b-button>
         </b-input-group-append>
       </b-input-group>
     </b-container>
