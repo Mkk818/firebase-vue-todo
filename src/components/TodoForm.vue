@@ -22,6 +22,7 @@ export default {
   methods: {
     handleAddTodo() {
       this.$emit('handleParentAddTodo', this.value);
+      this.value = '';
       // eslint-disable-next-line no-console
       console.log(this.value);
     },

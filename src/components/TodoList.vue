@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row :key="index" v-for="(todo, index) in todos" class="mt-2">
-      <b-col cols="8" class="text-start">
+      <b-col cols="8" :class="[{line: todo.complete}, 'text-start']">
         <h5>{{ todo.text }}</h5>
       </b-col>
       <b-col cols="4" class="text-end">
@@ -31,4 +31,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .line {
+    text-decoration:line-through;
+  }
+</style>
