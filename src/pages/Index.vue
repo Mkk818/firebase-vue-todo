@@ -26,7 +26,7 @@ export default {
   methods: {
     handleParentAddTodo(value) {
       if (value) {
-        this.todos.push({ text: value });
+        this.todos.unshift({ text: value });
       }
     },
   },
