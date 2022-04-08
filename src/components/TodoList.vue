@@ -5,8 +5,12 @@
         <h5>{{ todo.text }}</h5>
       </b-col>
       <b-col cols="4" class="text-end">
-        <b-button>完了</b-button>
-        <b-button @click="handleDeleteTodo(index)">削除</b-button>
+        <b-button
+          @click="handleCompleteTodo(index)"
+          :variant="todo.complete ? '': 'success'">
+          {{ todo.complete ? '完了' : '未完了' }}
+        </b-button>
+        <b-button @click="handleDeleteTodo" variant="danger">削除</b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -19,6 +23,9 @@ export default {
   methods: {
     handleDeleteTodo(index) {
       this.$emit('handleParentDeleteTodo', index);
+    },
+    handleCompleteTodo(index) {
+      this.$emit('handleParentCompleteTodo', index);
     },
   },
 };
